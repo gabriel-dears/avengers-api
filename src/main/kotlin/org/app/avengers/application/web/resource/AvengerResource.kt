@@ -38,7 +38,7 @@ class AvengerResource(
     fun getAvengerDetails(@PathVariable("id") id: Long) =
             repository.getDetail(id)?.let {
                 ResponseEntity.ok().body(AvengerResponse.from(it))
-            }
+            } ?: ResponseEntity.notFound().build()
 
     @PostMapping
     fun createAvenger(@Valid @RequestBody request: AvengerRequest) =
