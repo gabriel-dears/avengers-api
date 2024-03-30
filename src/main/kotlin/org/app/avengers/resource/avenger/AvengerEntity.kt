@@ -5,10 +5,12 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.Table
 import org.app.avengers.domain.avenger.Avenger
 import org.jetbrains.annotations.NotNull
 
-@Entity
+@Entity(name = "avenger")
+//@Table(name = "avenger")
 data class AvengerEntity(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
