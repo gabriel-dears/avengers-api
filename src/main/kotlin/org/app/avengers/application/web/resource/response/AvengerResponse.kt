@@ -6,7 +6,7 @@ import org.app.avengers.domain.avenger.Avenger
 import org.jetbrains.annotations.NotNull
 
 data class AvengerResponse(
-        val id: Long,
+        val id: Long? = null,
         val nick: String,
         val person: String,
         val description: String?,
@@ -14,7 +14,6 @@ data class AvengerResponse(
 ) {
         companion object {
                 fun from(avenger: Avenger) = AvengerResponse(
-                        id = avenger.id,
                         nick = avenger.nick,
                         person = avenger.person,
                         description = avenger.description,
