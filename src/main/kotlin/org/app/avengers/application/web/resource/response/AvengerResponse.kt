@@ -14,6 +14,7 @@ data class AvengerResponse(
 ) {
         companion object {
                 fun from(avenger: Avenger) = AvengerResponse(
+                        id = avenger.id,
                         nick = avenger.nick,
                         person = avenger.person,
                         description = avenger.description,
